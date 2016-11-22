@@ -1,2 +1,3 @@
-# switches
-On/Off Android app for Switches
+# Switcha
+
+Android app for On/Off Switches
