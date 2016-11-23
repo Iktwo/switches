@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.iktwo.switcha.model.Switch" />
+
+        <variable
+            name="index"
+            type="Integer" />
+
+
+        <variable
+            name="handler"
+            type="com.iktwo.switcha.delegates.SwitchDelegateHandler" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{model.name}" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/on"
+                android:theme="@style/OnButton"
+                android:onClick="@{() -> handler.onSwitchSelected(model, true, index)}"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/off"
+                android:theme="@style/OffButton"
+                android:onClick="@{() -> handler.onSwitchSelected(model, false, index)}"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
